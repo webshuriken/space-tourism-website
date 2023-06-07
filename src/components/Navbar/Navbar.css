@@ -1,0 +1,77 @@
+/* 400 z index will keep the navbar above it all */
+.navbar {
+  z-index: 400;
+}
+
+.navbar-nav li,
+.navbar-menu-btn {
+  z-index: 402;
+}
+
+.navbar-nav li {
+  padding-bottom: 2rem;
+  font-size: 1.07rem;
+  letter-spacing: 2.7px;
+}
+.navbar-nav li > a {
+  position: relative;
+}
+.navbar-nav li > a:before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity .24s;
+}
+.navbar-nav li.active > a:before {
+  opacity: 1;
+}
+.navbar-nav li > a:hover:before {
+  opacity: .4;
+}
+.navbar-nav li > a > span {
+  font-weight: bold;
+  padding-right: 1rem;
+}
+
+.navbar-nav:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-nav li {
+    height: 100%;
+    padding-bottom: 0;
+    font-size: .94rem;
+    letter-spacing: 2.36px;
+  }
+  .navbar-nav li > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .navbar-nav li > a:before {
+    bottom: 0;
+  }
+  .navbar-nav li > a > span {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-nav li > a > span {
+    display: inline;
+  }
+}
