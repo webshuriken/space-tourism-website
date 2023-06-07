@@ -1,9 +1,40 @@
 .explore-btn {
+  position: relative;
   height: 150px;
   width: 150px;
   border-radius: 50%;
   font-size: 1.34rem;
   letter-spacing: 1.25px;
+}
+.explore-btn:before,
+.explore-btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: white;
+}
+.explore-btn:before {
+  top: -32%;
+  left: -32%;
+  height: 164%;
+  width: 164%;
+  opacity: .1;
+  transform: scale(.2);
+  transition: transform .32s;
+}
+.explore-btn:after {
+  height: 100%;
+  width: 100%;
+}
+.explore-btn span {
+  display: block;
+  position: relative;
+  z-index: 200;
+}
+.explore-btn:hover:before {
+  transform: scale(1);
 }
 
 @media screen and (min-width: 768px) {
