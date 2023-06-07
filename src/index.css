@@ -1,6 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&display=swap');
 
 /* tailwind directives */
 @tailwind base;
@@ -8,11 +8,19 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Barlow Condensed', 'Bellefair', -apple-system, sans-serif;
+  font-family: 'Barlow', 'Barlow Condensed', 'Bellefair', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
   font-size: 15px;
+  color: #ffffff;
+}
+
+.app-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }

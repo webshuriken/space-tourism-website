@@ -1,19 +1,22 @@
-.Home {
-  text-align: center;
+.explore-btn {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  font-size: 1.34rem;
+  letter-spacing: 1.25px;
 }
 
-.Home-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (min-width: 768px) {
+  .explore-btn {
+    height: 242px;
+    width: 242px;
+    font-size: 2.13rem;
+    letter-spacing: 2px;
+  }
 }
-
-.Home-link {
-  color: #61dafb;
+@media screen and (min-width: 1024px) {
+  .explore-btn {
+    height: 274px;
+    width: 274px;
+  }
 }
-
