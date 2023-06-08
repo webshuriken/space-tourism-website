@@ -50,6 +50,17 @@
   -webkit-backdrop-filter: blur(30px);
 }
 
+.navbar--decoration {
+  position: absolute;
+  top: 48px;
+  left: 10%;
+  height: 1px;
+  width: calc(90% - 800px);
+  background-color: rgba(255,255,255,.3);
+  transform: scaleX(0);
+  transition: transform 1s;
+}
+
 @media screen and (min-width: 768px) {
   .navbar-nav li {
     height: 100%;
@@ -64,6 +75,7 @@
   }
   .navbar-nav li > a:before {
     bottom: 0;
+    height: 3px;
   }
   .navbar-nav li > a > span {
     display: none;
@@ -71,7 +83,17 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .navbar-nav li > a {
+    font-size: 1.07rem;
+    letter-spacing: 2.7px;
+  }
   .navbar-nav li > a > span {
     display: inline;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar--decoration {
+    transform: scaleX(1);
   }
 }
