@@ -3,6 +3,11 @@
   z-index: 400;
 }
 
+.navbar-nav {
+  transform: translateX(1000px);
+  transition: transform .32s;
+}
+
 .navbar-nav li,
 .navbar-menu-btn {
   z-index: 402;
@@ -50,6 +55,11 @@
   -webkit-backdrop-filter: blur(30px);
 }
 
+/* reveals hidden mobile menu, only for screen less than 768px in width */
+.navbar-nav.active {
+  transform: translateX(0);
+}
+
 .navbar--decoration {
   position: absolute;
   top: 48px;
@@ -62,6 +72,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .navbar-nav {
+    transform: translateX(0);
+  }
   .navbar-nav li {
     height: 100%;
     padding-bottom: 0;
