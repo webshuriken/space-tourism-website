@@ -8,7 +8,7 @@ import Navbar from './Navbar/Navbar';
 
 export default function App() {
   return (
-    <div>
+    <div className="relative overflow-x-hidden">
       <Navbar />
       <Routes>
         <Route path='/' element={ <Home /> } />
