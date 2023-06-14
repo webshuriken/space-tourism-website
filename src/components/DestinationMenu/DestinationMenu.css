@@ -1,0 +1,29 @@
+.destination-menu__btn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity .28s;
+}
+
+.destination-menu__btn.active:before {
+  opacity: 1;
+}
+
+.destination-menu__btn.active:hover:before {
+  opacity: .4;
+}
+
+.destination-menu__btn.active:active:before {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .destination-menu__btn:before {
+    bottom: -10px;
+  }
+}
