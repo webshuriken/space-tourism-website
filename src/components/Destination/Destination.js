@@ -31,7 +31,7 @@ export default function Destination() {
             <source srcSet={webp} type='image/webp' />
             <img src={png} alt={`image of the ${destination.name}`} />
           </picture>
-          <div className='grid  place-items-center lg:place-items-start grid-rows-[repeat(5, auto)] pt-[6px]'>
+          <div className='grid  place-items-center lg:place-items-start grid-rows-[repeat(5,auto)] pt-[10px]'>
             <DestinationMenu list={appData.destinations} handleClick={onClickChangeDestination} />
             <h2 className='pt-[12px] md:pt-8 font-h2 text-h2-sm md:text-h2-md lg:text-h2-lg uppercase'>{destination.name}</h2>
             <div>
