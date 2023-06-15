@@ -38,6 +38,9 @@
 .navbar-nav li > a:hover:before {
   opacity: .4;
 }
+.navbar-nav li > a:active:before {
+  opacity: 1;
+}
 .navbar-nav li > a > span {
   font-weight: bold;
   padding-right: 1rem;

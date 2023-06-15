@@ -27,21 +27,20 @@ export default function Navbar() {
       <ul className={`${mobileMenu} navbar-nav absolute top-0 right-0 flex flex-col md:flex-row md:items-center md:justify-between h-screen lg:justify-evenly md:h-[96px] w-[68%] md:w-[450px] lg:w-[830px] md:mr-0 pt-[118px] pl-[28px] md:pt-0 md:px-[48px] font-barlow-condensed lg:text-nav uppercase`}>
         {
           AppPages.map((page, i) => {
-            const path = location.pathname;
-            // create active link class
-            const cname = (path.includes(page.toLowerCase()) || (path === '/' && page === 'Home')) ? 'active' : '';
+            // the page need comparing with other strings so best to lowercase it from the get go
+            page = page.toLowerCase();
+            // create active button item class
+            const activeBtnClass = (location.pathname.includes(page) || (location.pathname === '/' && page === 'home')) ? 'active' : '';
 
             return (
-              <li className={cname} key={i}>
-                <Link to={page.toLowerCase()}>
+              <li className={activeBtnClass} key={i}>
+                <Link to={page === 'home' ? '/' : page}>
                   <span>0{i}</span> {page}
                 </Link>
               </li>
             );
           })
         }
-        
-        
       </ul>
       <div className='navbar--decoration'></div>
     </nav>
