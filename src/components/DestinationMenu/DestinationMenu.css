@@ -14,11 +14,11 @@
   opacity: 1;
 }
 
-.destination-menu__btn.active:hover:before {
+.destination-menu__btn:hover:before {
   opacity: .4;
 }
 
-.destination-menu__btn.active:active:before {
+.destination-menu__btn:active:before {
   opacity: 1;
 }
 
