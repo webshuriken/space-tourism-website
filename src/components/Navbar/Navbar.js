@@ -29,12 +29,13 @@ export default function Navbar() {
           AppPages.map((page, i) => {
             // the page need comparing with other strings so best to lowercase it from the get go
             page = page.toLowerCase();
+            const linkTo = page === 'home' ? '' : page;
             // create active button item class
             const activeBtnClass = (location.pathname.includes(page) || (location.pathname === '/' && page === 'home')) ? 'active' : '';
 
             return (
               <li className={activeBtnClass} key={i}>
-                <Link to={page === 'home' ? '/' : page}>
+                <Link to={`space-tourism-website/${linkTo}`}>
                   <span>0{i}</span> {page}
                 </Link>
               </li>
