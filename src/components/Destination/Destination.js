@@ -9,16 +9,31 @@ import DestinationMenu from '../DestinationMenu/DestinationMenu';
 
 
 export default function Destination() {
-  // make the image responsive
-  const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
   // on first load, we will default to the first destination in the list
   const [destination, setDestination] = useState(appData.destinations[0]);
-  const webp = require(`${destination.images.png}`);
+  // make the image responsive
+  const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
+  const webp = require(`${destination.images.webp}`);
   const png = require(`${destination.images.png}`);
 
-  function onClickChangeDestination(e) {
-    console.log("E: ", e.target.value)
+  // update the destination we are looking at
+  function loadDestination(name) {
+    try {
+      // we are assuming that appData is an array
+      let newDestination = false;
+       appData.destinations.forEach(dest => {
+        if (dest.name === name) {
+          newDestination = dest;
+        }
+      });
+      if (newDestination !== false) {
+        setDestination(state => newDestination);
+      }
+    }catch(e) {
+      throw new Error('Failed to map through the app destination succesfully');
+    }
   }
+
 
   return (
     <section className="app-page flex flex-row justify-center pt-[88px] md:pt-[130px] lg:pt-[208px] lg:px-8" style={{backgroundImage: `url(${bgImage})`}}>
@@ -32,7 +47,7 @@ export default function Destination() {
             <img src={png} alt={`image of the ${destination.name}`} />
           </picture>
           <div className='grid  place-items-center lg:place-items-start grid-rows-[repeat(5,auto)] pt-[10px]'>
-            <DestinationMenu list={appData.destinations} handleClick={onClickChangeDestination} />
+            <DestinationMenu list={appData.destinations} handleClick={loadDestination} />
             <h2 className='pt-[12px] md:pt-8 font-h2 text-h2-sm md:text-h2-md lg:text-h2-lg uppercase'>{destination.name}</h2>
             <div>
               <p className='md:text-p-md lg:text-p-lg leading-p-sm md:leading-p-md lg:leading-p-lg text-center lg:text-left'>{destination.description}</p>
