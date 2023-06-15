@@ -10,7 +10,7 @@ function Home() {
   const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
 
   return (
-    <section id="home-wrapper" className='app-page flex justify-center pt-[112px] md:pt-[203px] px-[24px] lg:px-[8%] xl:px-[11%] pb-16 lg:pt-[28%]' style={{backgroundImage: `url(${bgImage})`}}>
+    <section id="home-wrapper" className='app-page flex justify-center pt-[112px] md:pt-[203px] lg:px-[8%] xl:px-[11%] pb-16 lg:pt-[28%]' style={{backgroundImage: `url(${bgImage})`}}>
       <div className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:grid-rows-[260px_150px] w-full lg:max-w-[1600px] text-center'>
         <div className='lg:col-start-1 lg:col-span-1 py-1 h-[160px] md:h-[220px] lg:text-left'>
           <h5 className='font-h5 text-h5-sm md:text-h5-md lg:text-h5-lg tracking-h5-sm md:tracking-h5-md lg:tracking-h5-lg uppercase'>So, you want to travel to</h5>
