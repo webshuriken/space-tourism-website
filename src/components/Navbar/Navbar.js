@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/shared/logo.svg';
 import hamburgerBtn from '../../assets/shared/icon-hamburger.svg';
@@ -12,11 +12,24 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState('disabled');
 
-  function handleMobileMenu() {
-    if (window.innerWidth < 768) {
+  function handleMobileMenu(forceClose = false) {
+    if (window.innerWidth < 768 || forceClose) {
       setMobileMenu(() => mobileMenu === 'active' ? 'disabled' : 'active');
     }
   }
+
+  useEffect(() => {
+    // only meant to close the opened menu
+    function handleReize() {
+      if (mobileMenu === 'active') {
+        handleMobileMenu(true);
+      }
+    }
+    // create listener
+    window.addEventListener('resize', handleReize);
+    // clean-up function
+    return () => window.removeEventListener('resize', handleReize);
+  }, [mobileMenu])
 
   return (
     <nav className='navbar absolute flex top-0 left-0 items-center justify-between h-[88px] md:h-[96px] w-full px-[24px] md:px-[38px] lg:mt-[40px]'>
