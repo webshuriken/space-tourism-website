@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/shared/logo.svg';
 import hamburgerBtn from '../../assets/shared/icon-hamburger.svg';
@@ -18,6 +18,17 @@ export default function Navbar() {
     }
   }
 
+  useEffect(() => {
+    // regardless of the current menu state, lets make sure it is closed
+    function handleResize() {
+      setMobileMenu((state) => 'disabled');
+    }
+    // create listener
+    window.addEventListener('resize', handleResize);
+    // clean-up function
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
+
   return (
     <nav className='navbar absolute flex top-0 left-0 items-center justify-between h-[88px] md:h-[96px] w-full px-[24px] md:px-[38px] lg:mt-[40px]'>
       <img src={logo} className='h-[40px] w-[40px] md:h-[48px] md:w-[48px]' alt="app logo that consists for a white circle" />
@@ -29,13 +40,12 @@ export default function Navbar() {
           AppPages.map((page, i) => {
             // the page need comparing with other strings so best to lowercase it from the get go
             page = page.toLowerCase();
-            const linkTo = page === 'home' ? '' : page;
             // create active button item class
-            const activeBtnClass = (location.pathname.includes(page) || (location.pathname === '/' && page === 'home')) ? 'active' : '';
+            const activeBtnClass = location.pathname.includes(page) ? 'active' : '';
 
             return (
               <li className={activeBtnClass} key={i}>
-                <Link to={`space-tourism-website/${linkTo}`}>
+                <Link to={`space-tourism-website/${page}`} onClick={handleMobileMenu}>
                   <span>0{i}</span> {page}
                 </Link>
               </li>
