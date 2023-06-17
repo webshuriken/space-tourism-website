@@ -12,27 +12,22 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState('disabled');
 
-  function handleMobileMenu(forceClose = false) {
-    if (window.innerWidth < 768 || forceClose) {
+  function handleMobileMenu() {
+    if (window.innerWidth < 768) {
       setMobileMenu(() => mobileMenu === 'active' ? 'disabled' : 'active');
     }
   }
 
   useEffect(() => {
-    // only meant to close the opened menu
-    function handleReize() {
-      if (mobileMenu === 'active') {
-        handleMobileMenu(true);
-      }
+    // regardless of the current menu state, lets make sure it is closed
+    function handleResize() {
+      setMobileMenu((state) => 'disabled');
     }
     // create listener
-    window.addEventListener('resize', handleReize);
+    window.addEventListener('resize', handleResize);
     // clean-up function
-    return () => window.removeEventListener('resize', handleReize);
-  }, [mobileMenu])
-
-  console.log("LOCATION: ", location.pathname)
-
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
   return (
     <nav className='navbar absolute flex top-0 left-0 items-center justify-between h-[88px] md:h-[96px] w-full px-[24px] md:px-[38px] lg:mt-[40px]'>
@@ -50,7 +45,7 @@ export default function Navbar() {
 
             return (
               <li className={activeBtnClass} key={i}>
-                <Link to={`space-tourism-website/${page}`}>
+                <Link to={`space-tourism-website/${page}`} onClick={handleMobileMenu}>
                   <span>0{i}</span> {page}
                 </Link>
               </li>
