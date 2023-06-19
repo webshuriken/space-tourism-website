@@ -11,7 +11,7 @@ export default function App() {
     <div className="relative min-h-screen overflow-x-hidden">
       <Navbar />
       <Routes>
-        <Route path='space-tourism-website/home' element={ <Home /> } />
+        <Route path='space-tourism-website/' element={ <Home /> } />
         <Route path='space-tourism-website/destination' element={ <Destination /> } />
         <Route path='space-tourism-website/crew' element={ <Crew /> } />
         <Route path='space-tourism-website/technology' element={ <Technology /> } />
