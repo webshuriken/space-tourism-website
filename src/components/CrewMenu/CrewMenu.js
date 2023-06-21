@@ -13,7 +13,7 @@ export default function CrewMenu({crewList, handleClick}) {
   }
 
   return (
-    <ul className="flex justify-between justify-self-center md:order-3 w-[88px] pt-[32px]">
+    <ul className="flex justify-between justify-self-center md:order-3 w-[88px] pt-[32px] lg:col-start-1 lg:col-span-1 lg:row-start-3 lg:row-span-1 md:justify-self-start lg:w-[132px]">
       {
         crewList.map((member, i) => {
           const activeBtnClass = member.name === activeBtn ? 'active ' : '';
@@ -22,7 +22,7 @@ export default function CrewMenu({crewList, handleClick}) {
               <button 
                 onClick={(e) => loadMember(e.target.value)} 
                 value={member.name}
-                className={`${activeBtnClass}member-menu__btn relative h-[10px] w-[10px] bg-white rounded-full`}
+                className={`${activeBtnClass}member-menu__btn relative h-[10px] w-[10px] bg-white rounded-full lg:h-[15px] lg:w-[15px]`}
                 aria-label={member.name}
               ></button>
             </li>
