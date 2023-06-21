@@ -13,7 +13,7 @@ export default function CrewMenu({crewList, handleClick}) {
   }
 
   return (
-    <ul className="flex justify-between justify-self-center w-[88px] pt-[32px]">
+    <ul className="flex justify-between justify-self-center md:order-3 w-[88px] pt-[32px]">
       {
         crewList.map((member, i) => {
           const activeBtnClass = member.name === activeBtn ? 'active ' : '';

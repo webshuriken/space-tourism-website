@@ -42,16 +42,16 @@ export default function Crew() {
           <span className='font-bold pr-2 opacity-40'>02</span> Meet your crew
         </h5>
         <article className='grid pt-[32px]'>
-          <picture className='block flex justify-center h-[222px] w-auto border-b border-white border-solid'>
+          <picture className='block flex justify-center md:justify-self-center md:order-4 h-[222px] w-auto md:h-auto md:w-[456px] border-b border-white border-solid md:pt-[64px]'>
             <source srcSet={webp} type='image/webp' />
             <img src={png} className='block h-full w-auto' alt={`image of crew member ${member.name}`} />
           </picture>
           <CrewMenu crewList={crew} handleClick={loadCrewMember} />
-          <div className='pt-[32px] uppercase text-center'>
+          <div className='md:order-1 pt-[32px] md:pt-0 uppercase text-center'>
             <h4 className='font-h4 text-h4-sm md:text-h4-md lg:text-lg'>{member.role}</h4>
             <h3 className='font-h3 text-h3-sm md:text-h3-md lg:text-h3-lg'>{member.name}</h3>
           </div>
-          <div className='pt-[22px] pb-12 text-center'>
+          <div className='justify-self-center md:order-2 md:w-[458px] pt-[22px] pb-12 md:pt-[10px] md:pb-0 md:text-p-md lg:text-p-lg leading-p-sm md:leading-p-md lg:leading-p-lg text-center'>
             <p>{member.bio}</p>
           </div>
         </article>
