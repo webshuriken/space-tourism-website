@@ -42,9 +42,9 @@ export default function Crew() {
           <span className='font-bold pr-2 opacity-40'>02</span> Meet your crew
         </h5>
         <article className='grid lg:grid-cols-[2fr,1fr] lg:grid-rows-[248px_repeat(2,200px)] pt-[32px]'>
-          <picture className='block flex justify-center md:justify-self-center md:order-4 h-[222px] w-auto md:h-auto md:w-[456px] border-b border-white border-solid md:pt-[64px] lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-3 lg:w-full lg:max-h-max lg:pt-0'>
+          <picture className='block flex justify-center md:justify-self-center md:order-4 h-[222px] w-auto md:h-auto md:w-[456px] border-b border-white border-solid md:pt-[64px] lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-3 lg:w-full lg:h-max lg:pt-0'>
             <source srcSet={webp} type='image/webp' />
-            <img src={png} className='block h-full w-auto' alt={`image of crew member ${member.name}`} />
+            <img src={png} className='block h-auto w-auto lg:w-full lg:h-max' alt={`image of crew member ${member.name}`} />
           </picture>
           <CrewMenu crewList={crew} handleClick={loadCrewMember} />
           <div className='md:order-1 pt-[32px] md:pt-0 uppercase text-center lg:self-end lg:text-left lg:col-start-1 lg:col-span-1 lg:row-start-1 lg:row-span-1'>
