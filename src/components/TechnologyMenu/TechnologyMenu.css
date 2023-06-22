@@ -7,6 +7,7 @@
 .technology-menu__item {
   height: 40px;
   width: 40px;
+  z-index: 40;
 }
 
 .technology-menu__item:before {
@@ -36,6 +37,9 @@
   color: black;
   opacity: 0;
 }
+.technology-menu__btn {
+  z-index: 44;
+}
 
 /* navigation states */
 .technology-menu__item:hover:before {
@@ -48,6 +52,7 @@
 
 .technology-menu__item.active:after {
   opacity: 1;
+  z-index: 48;
 }
 
 
