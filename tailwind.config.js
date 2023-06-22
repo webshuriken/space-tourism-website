@@ -14,7 +14,8 @@ module.exports = {
       },
       fontFamily: {
         'bellefair': ['Bellefair'],
-        'barlow': ['Barlow Condensed'],
+        'barlow-condensed': ['Barlow Condensed'],
+        'barlow': ['Barlow'],
         'h1': ['Bellefair'],
         'h2': ['Bellefair'],
         'h3': ['Bellefair'],
@@ -28,16 +29,19 @@ module.exports = {
         'h1-sm': '5.333rem',
         'h1-lg': '10rem',
         'h2-sm': '3.733rem',
+        'h2-md': '5.33rem',
         'h2-lg': '6.666rem',
         'h3-sm': '1.6rem',
+        'h3-md': '2.66rem',
         'h3-lg': '3.733rem',
-        'h4-sm': '1.1666rem',
+        'h4-sm': '1.06rem',
+        'h4-md': '1.6rem',
         'h4-lg': '2.133rem',
         'h5-sm': '1.07rem',
         'h5-md': '1.34rem',
         'h5-lg': '1.87rem',
         'sub-head-1': '1.866rem',
-        'sub-head-2': '1.933rem',
+        'sub-head-2': '0.94rem',
         'nav': '1.07rem',
         'p-md': '1.07rem',
         'p-lg': '1.2rem'
@@ -50,7 +54,9 @@ module.exports = {
         'nav': '2.7px'
       },
       lineHeight: {
-        'p-sm': '25px'
+        'p-sm': '25px',
+        'p-md': '28px',
+        'p-lg': '32px'
       }
     }
   },
