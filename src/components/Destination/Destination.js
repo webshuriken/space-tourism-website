@@ -37,7 +37,7 @@ export default function Destination() {
 
   return (
     <section className="app-page flex flex-row justify-center pt-[88px] md:pt-[130px] lg:pt-[208px] lg:px-8" style={{backgroundImage: `url(${bgImage})`}}>
-      <div className='w-full max-w-[1098px]'>
+      <div className='w-full max-w-[1138px]'>
         <h5 className='font-h5 text-h5-sm md:text-h5-md lg:text-h5-lg tracking-h5-sm md:tracking-h5-md lg:tracking-h5-lg uppercase text-center md:text-left'>
           <span className='font-bold pr-2 opacity-40'>01</span> Pick your destination
         </h5>
