@@ -12,7 +12,7 @@ export default function Technology() {
   // default to first item in the crew list
   const [technologyList, setTechnologyList] = useState(appData.technology);
   const [technology, setTechnology] = useState(appData.technology[0]);
-  const [screenOrientation, setScreenOrientation] = useState('portrait');
+  const [screenOrientation, setScreenOrientation] = useState('landscape');
   // resposive page background image
   const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
   const portrait = require(`${technology.images.portrait}`);
@@ -39,19 +39,21 @@ export default function Technology() {
   // to detect the screen size and use
   useEffect(() => {
     // regardless of the current menu state, lets make sure it is closed
-    function handleOrientation(e) {
-      if (e.matches) {
+    function handleResize() {
+      if (window.innerWidth >= 1024) {
         setScreenOrientation(() => 'portrait');
       }else{
         setScreenOrientation(() => 'landscape');
       }
     }
     // create listener
-    const orientation = window.matchMedia('(orientation: portrait)');
-    orientation.addEventListener('change', handleOrientation);
+    window.addEventListener('resize', handleResize);
+
+    // check the window size on page load
+    handleResize();
 
     // clean-up function
-    return () => orientation.removeEventListener('change', handleOrientation);
+    return () => window.removeEventListener('resize', handleResize);
   }, [])
 
   return (
