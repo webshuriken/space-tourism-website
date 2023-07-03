@@ -4,14 +4,18 @@ import bgTablet from  '../../assets/crew/background-crew-tablet.jpg';
 import bgDesktop from '../../assets/crew/background-crew-desktop.jpg';
 import useBackgroundImage from '../../hooks/useBackgroundImage';
 import appData from '../../data/data.json';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CrewMenu from '../CrewMenu/CrewMenu';
+import { Circles } from 'react-loader-spinner';
+import { useSpinner } from '../../hooks/userSpinner';
 
 
 export default function Crew() {
   // default to first item in the crew list
   const [crew, setCrew] = useState(appData.crew);
   const [member, setMember] = useState(appData.crew[0]);
+  // use the spinner custom hook
+  const spinnerLoading = useSpinner();
   // make the image responsive
   const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
   const webp = require(`${member.images.webp}`);
@@ -41,20 +45,33 @@ export default function Crew() {
         <h5 className='font-h5 text-h5-sm md:text-h5-md lg:text-h5-lg tracking-h5-sm md:tracking-h5-md lg:tracking-h5-lg uppercase text-center md:text-left'>
           <span className='font-bold pr-2 opacity-40'>02</span> Meet your crew
         </h5>
-        <article className='grid lg:grid-cols-[2fr,1fr] lg:grid-rows-[248px_repeat(2,200px)] pt-[32px]'>
-          <picture className='block flex justify-center md:justify-self-center md:order-4 h-[222px] w-auto md:h-auto md:w-[456px] border-b border-white border-solid md:pt-[64px] lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-3 lg:w-full lg:h-max lg:pt-0'>
-            <source srcSet={webp} type='image/webp' />
-            <img src={png} className='block h-auto w-auto lg:w-full lg:h-max' alt={`image of crew member ${member.name}`} />
-          </picture>
-          <CrewMenu crewList={crew} handleClick={loadCrewMember} />
-          <div className='md:order-1 pt-[32px] md:pt-0 uppercase text-center lg:self-end lg:text-left lg:col-start-1 lg:col-span-1 lg:row-start-1 lg:row-span-1'>
-            <h4 className='font-h4 text-h4-sm md:text-h4-md lg:text-h4-lg opacity-60'>{member.role}</h4>
-            <h3 className='font-h3 text-h3-sm md:text-h3-md lg:text-h3-lg'>{member.name}</h3>
-          </div>
-          <div className='justify-self-center md:order-2 md:w-[458px] pt-[22px] pb-12 md:pt-[10px] md:pb-0 md:text-p-md lg:text-p-lg leading-p-sm md:leading-p-md lg:leading-p-lg text-center md:text-left lg:justify-self-start lg:col-start-1 lg:col-span-1 lg:row-start-2 lg:row-span-1 lg:w-[454px]'>
-            <p>{member.bio}</p>
-          </div>
-        </article>
+        {
+          spinnerLoading
+            ?
+              <Circles
+                height="80"
+                width="80"
+                color="#ffffff"
+                ariaLabel="circles-loading"
+                wrapperClass="justify-center items-center h-3/5"
+                visible={true}
+              />
+            :
+              <article className='grid lg:grid-cols-[2fr,1fr] lg:grid-rows-[248px_repeat(2,200px)] pt-[32px]'>
+                <picture className='block flex justify-center md:justify-self-center md:order-4 h-[222px] w-auto md:h-auto md:w-[456px] border-b border-white border-solid md:pt-[64px] lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-3 lg:w-full lg:h-max lg:pt-0'>
+                  <source srcSet={webp} type='image/webp' />
+                  <img src={png} className='block h-auto w-auto lg:w-full lg:h-max' alt={`image of crew member ${member.name}`} />
+                </picture>
+                <CrewMenu crewList={crew} handleClick={loadCrewMember} />
+                <div className='md:order-1 pt-[32px] md:pt-0 uppercase text-center lg:self-end lg:text-left lg:col-start-1 lg:col-span-1 lg:row-start-1 lg:row-span-1'>
+                  <h4 className='font-h4 text-h4-sm md:text-h4-md lg:text-h4-lg opacity-60'>{member.role}</h4>
+                  <h3 className='font-h3 text-h3-sm md:text-h3-md lg:text-h3-lg'>{member.name}</h3>
+                </div>
+                <div className='justify-self-center md:order-2 md:w-[458px] pt-[22px] pb-12 md:pt-[10px] md:pb-0 md:text-p-md lg:text-p-lg leading-p-sm md:leading-p-md lg:leading-p-lg text-center md:text-left lg:justify-self-start lg:col-start-1 lg:col-span-1 lg:row-start-2 lg:row-span-1 lg:w-[454px]'>
+                  <p>{member.bio}</p>
+                </div>
+              </article>
+        }
       </div>
     </section>
   )
