@@ -14,7 +14,7 @@ function Home() {
   const bgImage = useBackgroundImage({bgList: [bgMobile, bgTablet, bgDesktop]});
 
   return (
-    <section id="home-wrapper" className='app-page flex justify-center pt-[112px] md:pt-[203px] lg:px-[8%] xl:px-[11%] pb-16 lg:pt-[28%]' style={{backgroundImage: `url(${bgImage})`}}>
+    <section id="home-wrapper" className='app-page flex justify-center pt-[112px] md:pt-[203px] lg:px-[8%] xl:px-[11%] pb-16 lg:pt-[28%] xl:pt-[25%]' style={{backgroundImage: `url(${bgImage})`}}>
     {
       spinnerLoading
         ?
@@ -39,7 +39,7 @@ function Home() {
               because we’ll give you a truly out of this world experience!
               </p>
             </div>
-            <button className='explore-btn lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:justify-self-end mt-[70px] md:mt-[140px] lg:mt-0 bg-white text-midnight uppercase'>
+            <button className='explore-btn font-bellefair lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:justify-self-end mt-[70px] md:mt-[140px] lg:mt-0 xl:place-self-end bg-white text-midnight uppercase'>
               <span>Explore</span>
             </button>
           </div>
