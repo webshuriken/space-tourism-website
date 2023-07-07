@@ -34,10 +34,10 @@ Users should be able to:
 
 ### Links
 
-Here are the links to my solution on GitHub and the live page where you can check out the profile card on your browser.
+Here are the links to my solution on GitHub and the live page where you can check out the space tourism SPA on your browser.
 
 - Solution URL: [Github Repo](https://github.com/webshuriken/space-tourism-website)
-- Live URL: [Four Card Feature](https://webshuriken.github.io/space-tourism-website/)
+- Live URL: [Space tourism](https://webshuriken.github.io/space-tourism-website/)
 
 ## My process :computer:
 
