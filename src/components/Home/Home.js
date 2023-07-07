@@ -1,4 +1,5 @@
 import './Home.css';
+import { Link } from 'react-router-dom';
 import bgMobile from '../../assets/home/background-home-mobile.jpg';
 import bgTablet from '../../assets/home/background-home-tablet.jpg';
 import bgDesktop from '../../assets/home/background-home-desktop.jpg';
@@ -39,9 +40,11 @@ function Home() {
               because we’ll give you a truly out of this world experience!
               </p>
             </div>
-            <button className='explore-btn font-bellefair lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:justify-self-end mt-[70px] md:mt-[140px] lg:mt-0 xl:place-self-end bg-white text-midnight uppercase'>
-              <span>Explore</span>
-            </button>
+            <Link
+              to='destination' 
+              className='flex explore-btn font-bellefair lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:justify-self-end mt-[70px] md:mt-[140px] lg:mt-0 xl:place-self-end bg-white text-midnight uppercase'>
+              <span className='self-center w-full'>Explore</span>
+            </Link>
           </div>
         }
     </section>
