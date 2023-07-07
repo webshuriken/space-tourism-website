@@ -8,7 +8,7 @@ import Navbar from './Navbar/Navbar';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <main className="relative min-h-screen overflow-x-hidden">
       <Navbar />
       <Routes>
         <Route path='space-tourism-website/' element={ <Home /> } />
@@ -16,6 +16,6 @@ export default function App() {
         <Route path='space-tourism-website/crew' element={ <Crew /> } />
         <Route path='space-tourism-website/technology' element={ <Technology /> } />
       </Routes>
-    </div>
+    </main>
   )
 }
