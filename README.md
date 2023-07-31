@@ -49,6 +49,7 @@ Here are the links to my solution on GitHub and the live page where you can chec
 - Mobile-first workflow
 - Figma design
 - Git and Github/pages
+- NASA Images API
 
 ### What I learned
 
@@ -87,6 +88,8 @@ theme: {
 }
 ```
 
+I learned more about intergrating APIs with React apps. The NASA API is well documented so it was easy to implement.
+
 ### Continued development
 
 I would like to feel confortable using the history feature of react-router and also be able to implement it without having to read documentation.
@@ -100,6 +103,7 @@ Here are the well written resources used throughout this project.
 - [React Router](https://reactrouter.com/en/main/start/overview)
 - [React updated docs](https://react.dev/)
 - [Tailwindcss](https://tailwindcss.com/docs/installation)
+- [NASA API](https://api.nasa.gov/)
 
 ## Author
 
