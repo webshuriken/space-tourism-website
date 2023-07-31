@@ -41,7 +41,7 @@ function Home() {
               </p>
             </div>
             <Link
-              to='destination' 
+              to='explore' 
               className='flex explore-btn font-bellefair lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:justify-self-end mt-[70px] md:mt-[140px] lg:mt-0 xl:place-self-end bg-white text-midnight uppercase'>
               <span className='self-center w-full'>Explore</span>
             </Link>
